@@ -102,68 +102,71 @@ export default function Lineup() {
                 </div>
                 
                 {!artist.isComingSoon && (
-                  <div className="flex items-center justify-between pt-6 border-t border-dark-700/50">
-                    <div className="flex items-center gap-3">
-                      {/* Only show round play button for solo artists */}
-                      {artist.socialLinks?.soundcloud && !artist.isDuo && (
-                        <button
-                          onClick={() => window.open(artist.socialLinks?.soundcloud, '_blank')}
-                          className="group relative w-12 h-12 bg-gradient-to-r from-festival-orange to-festival-red rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-festival-orange/30 hover:rotate-12"
-                          aria-label={`Écouter ${artist.name} sur SoundCloud`}
-                        >
-                          <Play className="w-5 h-5 text-white ml-0.5 transition-transform duration-300 group-hover:scale-110" fill="currentColor" />
-                          <div className="absolute inset-0 rounded-full bg-festival-orange animate-ping opacity-20 group-hover:animate-none"></div>
-                        </button>
-                      )}
-                      
-                      {/* For duos, show a different style */}
-                      {artist.socialLinks?.soundcloud && artist.isDuo && (
-                        <a
-                          href={artist.socialLinks.soundcloud}
-                          className="group flex items-center gap-2 bg-gradient-to-r from-festival-orange/10 to-festival-red/10 text-festival-orange px-4 py-2 rounded-full transition-all duration-300 hover:from-festival-orange hover:to-festival-red hover:text-white hover:scale-105 border border-festival-orange/20"
-                          aria-label={`Écouter ${artist.name} sur SoundCloud`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Play className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-                          <span className="text-sm font-medium">Écouter</span>
-                        </a>
-                      )}
-                      
-                      {artist.socialLinks?.instagram && (
-                        <a
-                          href={artist.socialLinks.instagram}
-                          className="min-w-[44px] min-h-[44px] w-12 h-12 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full flex items-center justify-center text-secondary hover:text-pink-400 hover:from-pink-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 hover:rotate-12"
-                          aria-label={`Instagram de ${artist.name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Instagram className="w-5 h-5" />
-                        </a>
-                      )}
-                      
-                      {artist.socialLinks?.spotify && (
-                        <a
-                          href={artist.socialLinks.spotify}
-                          className="min-w-[44px] min-h-[44px] w-12 h-12 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-full flex items-center justify-center text-secondary hover:text-green-400 hover:from-green-500/20 hover:to-green-600/20 transition-all duration-300 hover:scale-110 hover:rotate-12"
-                          aria-label={`Spotify de ${artist.name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Music className="w-5 h-5" />
-                        </a>
-                      )}
-                    </div>
-                    
-                    <a
-                      href={`/artists/${artist.slug}`}
-                      className="group inline-flex items-center gap-2 bg-gradient-to-r from-festival-orange to-festival-red text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-festival-orange/30 hover:from-festival-red hover:to-festival-orange transform group-hover:-translate-y-0.5"
-                    >
-                      <span className="font-semibold">En savoir plus</span>
-                      <div className="transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-125">
-                        →
+                  <div className="pt-6 border-t border-dark-700/50">
+                    {/* Mobile: Stack vertically, Desktop: Side by side */}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="flex items-center gap-3 justify-center sm:justify-start">
+                        {/* Only show round play button for solo artists */}
+                        {artist.socialLinks?.soundcloud && !artist.isDuo && (
+                          <button
+                            onClick={() => window.open(artist.socialLinks?.soundcloud, '_blank')}
+                            className="group relative w-12 h-12 bg-gradient-to-r from-festival-orange to-festival-red rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-festival-orange/30 hover:rotate-12"
+                            aria-label={`Écouter ${artist.name} sur SoundCloud`}
+                          >
+                            <Play className="w-5 h-5 text-white ml-0.5 transition-transform duration-300 group-hover:scale-110" fill="currentColor" />
+                            <div className="absolute inset-0 rounded-full bg-festival-orange animate-ping opacity-20 group-hover:animate-none"></div>
+                          </button>
+                        )}
+                        
+                        {/* For duos, show a different style */}
+                        {artist.socialLinks?.soundcloud && artist.isDuo && (
+                          <a
+                            href={artist.socialLinks.soundcloud}
+                            className="group flex items-center gap-2 bg-gradient-to-r from-festival-orange/10 to-festival-red/10 text-festival-orange px-4 py-2 rounded-full transition-all duration-300 hover:from-festival-orange hover:to-festival-red hover:text-white hover:scale-105 border border-festival-orange/20"
+                            aria-label={`Écouter ${artist.name} sur SoundCloud`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Play className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                            <span className="text-sm font-medium">Écouter</span>
+                          </a>
+                        )}
+                        
+                        {artist.socialLinks?.instagram && (
+                          <a
+                            href={artist.socialLinks.instagram}
+                            className="min-w-[44px] min-h-[44px] w-12 h-12 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full flex items-center justify-center text-secondary hover:text-pink-400 hover:from-pink-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 hover:rotate-12"
+                            aria-label={`Instagram de ${artist.name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Instagram className="w-5 h-5" />
+                          </a>
+                        )}
+                        
+                        {artist.socialLinks?.spotify && (
+                          <a
+                            href={artist.socialLinks.spotify}
+                            className="min-w-[44px] min-h-[44px] w-12 h-12 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-full flex items-center justify-center text-secondary hover:text-green-400 hover:from-green-500/20 hover:to-green-600/20 transition-all duration-300 hover:scale-110 hover:rotate-12"
+                            aria-label={`Spotify de ${artist.name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Music className="w-5 h-5" />
+                          </a>
+                        )}
                       </div>
-                    </a>
+                      
+                      <a
+                        href={`/artists/${artist.slug}`}
+                        className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-festival-orange to-festival-red text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-festival-orange/30 hover:from-festival-red hover:to-festival-orange transform group-hover:-translate-y-0.5"
+                      >
+                        <span className="font-semibold">En savoir plus</span>
+                        <div className="transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-125">
+                          →
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 )}
               </div>

@@ -133,7 +133,7 @@ export const artists: Artist[] = [
     endTime: '00H00',
     description: 'HDX est un trio composé de jeunes talents originaires de Grenoble. Leurs musiques mêlent des influences futuristes et modernes dans un récit du quotidien, des soirées aux instants de doute et d\'amour sans lendemain.',
     image: '/images/artists/hdx.jpg',
-    isDuo: true,
+    isDuo: false,
     socialLinks: {
       spotify: 'https://open.spotify.com/intl-fr/artist/7GxsVvE196y7ZQKRmhyEY6?si=zDb59ZpzTlSx-KuAysOG8w',
       instagram: 'https://www.instagram.com/hdx_fr/',
