@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Newake';
+  src: url('/fonts/newake.woff2') format('woff2'),
+       url('/fonts/newake.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-festival-gradient text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow-orange transform hover:-translate-y-1 min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-card-dark text-festival-orange border-2 border-festival-orange px-6 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-festival-orange hover:text-white hover:scale-105 transform hover:-translate-y-1 min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-festival-gradient bg-clip-text text-transparent;
+  }
+  
+  .card {
+    @apply bg-card-dark rounded-xl shadow-dark p-6 transition-all duration-300 hover:shadow-dark-lg hover:scale-[1.02] border border-dark-700;
+  }
+  
+  .card-surface {
+    @apply bg-surface-dark rounded-xl shadow-dark p-6 transition-all duration-300 hover:shadow-dark-lg border border-dark-600;
+  }
+  
+  .text-primary {
+    @apply text-dark-100;
+  }
+  
+  .text-secondary {
+    @apply text-dark-400;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .backdrop-blur-strong {
+    backdrop-filter: blur(12px);
+  }
+  
+  .animate-scan {
+    animation: scan 3s ease-in-out infinite;
+  }
+  
+  @keyframes scan {
+    0%, 100% { 
+      opacity: 0; 
+      transform: translateY(-100%); 
+    }
+    50% { 
+      opacity: 1; 
+      transform: translateY(320px); 
+    }
+  }
+}
