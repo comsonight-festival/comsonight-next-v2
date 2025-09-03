@@ -5,7 +5,7 @@
   "functions": {
     "app/**/*.{ts,tsx}": {
       "maxDuration": 10,
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
   },
   "headers": [
