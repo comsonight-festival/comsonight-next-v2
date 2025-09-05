@@ -1,6 +1,8 @@
 import { SiteContent, Artist, TicketType, FoodItem } from './types'
 
 export const artists: Artist[] = [
+  // ARTISTES TEMPORAIREMENT DÉSACTIVÉS - À réactiver plus tard
+  /*
   {
     id: '1',
     name: 'Maman',
@@ -122,6 +124,7 @@ export const artists: Artist[] = [
       instagram: '#'
     }
   },
+  */
   {
     id: '5',
     name: 'HDX',
@@ -139,6 +142,20 @@ export const artists: Artist[] = [
       instagram: 'https://www.instagram.com/hdx_fr/',
       soundcloud: 'https://soundcloud.com/hdx-music'
     }
+  },
+  {
+    id: 'dj-comsono',
+    name: 'DJ COM\'SONO',
+    slug: 'dj-comsono',
+    genre: 'À venir',
+    stage: 'Main Stage',
+    timeSlot: 'Coming Soon',
+    startTime: 'TBA',
+    endTime: 'TBA',
+    description: 'D\'autres artistes de la ComSono seront bientôt dévoilés ! Restez connectés, de grandes surprises arrivent.',
+    image: '/images/logo-comsono.png',
+    isComingSoon: true,
+    socialLinks: {}
   },
   {
     id: 'coming-soon',
@@ -188,12 +205,10 @@ export const foodAndDrinks: FoodItem[] = [
   { id: 'soft', name: 'Soft', price: 2, category: 'drinks' },
   { id: 'beer-25', name: 'Bière 25cl', price: 3, category: 'drinks' },
   { id: 'beer-50', name: 'Bière 50cl', price: 5, category: 'drinks' },
-  { id: 'cocktails', name: 'Cocktails', price: 5, category: 'drinks' },
   { id: 'water', name: 'Eau', price: 1, category: 'drinks' },
-  { id: 'burger', name: 'Burger', price: 6, category: 'food' },
-  { id: 'hotdog', name: 'Hot-dog', price: 4, category: 'food' },
+  { id: 'croque-monsieur', name: 'Croque-monsieur', price: 4, category: 'food' },
   { id: 'fries', name: 'Frites', price: 3, category: 'food' },
-  { id: 'wrap-vege', name: 'Wrap végétarien', price: 5, category: 'food' }
+  { id: 'veggie-options', name: 'Options végétariennes', price: 5, category: 'food' }
 ]
 
 export const siteContent: SiteContent = {
